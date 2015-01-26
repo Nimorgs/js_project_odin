@@ -3,7 +3,7 @@ var gridSize=16;
 $(document).ready(function(){
 
 	createGrid(gridSize);
-
+	$("#gridSize").append("<p>GridSize: "+gridSize)
 
 
 
@@ -12,14 +12,19 @@ $(document).ready(function(){
 		console.log("test");
 	});
 	$("#btn2").click(function(){
-		gridSize=prompt("Size of new Grid");
-		
+
+		do{
+			gridSize=prompt("Size of new Grid (1-80)");
+		}while(gridSize>80||gridSize<1);		
 		$("table").remove();
 		$(".container").append("<table></table>");
+		$("#gridSize p").remove();
+		$("#gridSize").append("<p>GridSize: "+gridSize)
+
 		createGrid(gridSize);
 	});
 	$(document).on("mouseenter","td",function(){
-		$(this).css({"background-color":"black"});
+		$(this).css({"background-color":getRandomColor()});
 	});
 	
 
@@ -33,4 +38,13 @@ function createGrid(number){
 		};
 
 	};
+}
+
+function getRandomColor() {
+    var letters = '0123456789ABCDEF'.split('');
+    var color = '#';
+    for (var i = 0; i < 6; i++ ) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
 }

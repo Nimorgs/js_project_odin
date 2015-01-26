@@ -39,15 +39,35 @@ td{
 }
 .text{
 	position:absolute;
-	bottom:20px;
-	right:0px;
-	height:20px;
+	bottom:0px;
+	right:10px;
+	height:40px;
 	text-align: right;
 }
 .footer a{
 	position:absolute;
 	bottom:25px;
-	left:0px;
+	left:10px;
 	height:10px;
 	text-align:left;
+	text-decoration: none;
+	color:black;
+	font-weight:bold;
+
+}
+.footer a:visited{
+	text-decoration: none;
+	color:black;
+	font-weight:bold;
+}
+.footer a:hover{
+	text-decoration: none;
+	color:black;
+	font-weight:normal;
+}
+
+#gridSize{
+	position:absolute;
+	top:3px;
+	right:5px;
 }
